@@ -10,6 +10,12 @@ service:
   port: 8080
 
 postgresql:
+  persistence:
+    enabled: true
+    storageClass: "local-path"
+    size: 8Gi
+    accessModes:
+      - ReadWriteOnce
   enabled: true
   auth:
     database: keycloak_db
