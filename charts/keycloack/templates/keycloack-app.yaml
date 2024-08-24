@@ -11,7 +11,7 @@ spec:
     targetRevision: 22.1.3
     helm:
       valueFiles:
-        - ../values.yaml
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: keycloak
