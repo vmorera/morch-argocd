@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://charts.bitnami.com/bitnami # Usa el repositorio oficial de Bitnami
     chart: keycloak
-    targetRevision: 18.0.0 # Versión del Chart
+    targetRevision: 25.0.4 # Versión del Chart
     helm:
       valueFiles:
         - values.yaml # Opcional: Puedes incluir tu propio archivo de valores
