@@ -11,7 +11,7 @@ service:
 
 postgresql:
   volumePermissions:
-    enabled: true
+    enabled: true  # Habilita la gestión automática de permisos
   enabled: true
   persistence:
     enabled: true
@@ -24,17 +24,11 @@ postgresql:
     enabled: true
     runAsUser: 1001
     fsGroup: 1001
-  initContainers:
-    - name: fix-permissions
-      image: busybox
-      command: ["sh", "-c", "chown -R 1001:1001 /bitnami/postgresql"]
-      volumeMounts:
-        - name: data
-          mountPath: /bitnami/postgresql
   auth:
     database: keycloak_db
     username: keycloak_user
     password: keycloak_password
+
 
 
 # Aquí puedes añadir más configuraciones específicas para Keycloak
