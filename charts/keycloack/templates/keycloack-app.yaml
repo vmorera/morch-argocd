@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://charts.bitnami.com/bitnami
     chart: keycloak
-    targetRevision: 25.0.3
+    targetRevision: 22.1.3
   destination:
     server: https://kubernetes.default.svc
     namespace: keycloak
