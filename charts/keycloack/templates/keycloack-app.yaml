@@ -6,12 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.bitnami.com/bitnami # Usa el repositorio oficial de Bitnami
+    repoURL: https://charts.bitnami.com/bitnami
     chart: keycloak
-    targetRevision: 25.0.4 # Versión del Chart
-    helm:
-      valueFiles:
-        - values.yaml # Opcional: Puedes incluir tu propio archivo de valores
+    targetRevision: 25.0.3
   destination:
     server: https://kubernetes.default.svc
     namespace: keycloak
