@@ -10,6 +10,8 @@ service:
   port: 8080
 
 postgresql:
+  volumePermissions:
+    enabled: true
   enabled: true
   persistence:
     enabled: true
