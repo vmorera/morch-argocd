@@ -7,8 +7,8 @@ spec:
     storage: 8Gi  # Debe coincidir con lo que solicita la PVC
   accessModes:
     - ReadWriteOnce  # Debe coincidir con lo que solicita la PVC
-  persistentVolumeReclaimPolicy: Retain  # Puedes cambiar esto a Delete o Recycle según tus necesidades
-  storageClassName: ""  # Sin StorageClass para que coincida con la PVC
-  hostPath:
-    path: /mnt/data/keycloak-postgresql  # Asegúrate de que este path exista en el nodo
+  persistentVolumeReclaimPolicy: Retain  # O Delete, dependiendo de cómo quieras manejar la eliminación
+  storageClassName: "local-path"  # Debe coincidir con lo que está especificado en el PVC o dejarlo en blanco si no se utiliza StorageClass
+  hostPath:  # Usando hostPath si estás en un entorno local; para producción, usa algo más adecuado
+    path: /mnt/data/keycloak-postgresql  # Este es el path en el nodo
   volumeMode: Filesystem  # Debe coincidir con lo que solicita la PVC
