@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: keycloak
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://charts.bitnami.com/bitnami # Usa el repositorio oficial de Bitnami
+    chart: keycloak
+    targetRevision: 18.0.0 # Versión del Chart
+    helm:
+      valueFiles:
+        - values.yaml # Opcional: Puedes incluir tu propio archivo de valores
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: keycloak
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
