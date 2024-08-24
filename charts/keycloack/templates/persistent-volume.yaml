@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-keycloak-postgresql-0
+spec:
+  capacity:
+    storage: 8Gi  # Debe coincidir con lo que solicita la PVC
+  accessModes:
+    - ReadWriteOnce  # Debe coincidir con lo que solicita la PVC
+  persistentVolumeReclaimPolicy: Retain  # Puedes cambiar esto a Delete o Recycle según tus necesidades
+  storageClassName: ""  # Sin StorageClass para que coincida con la PVC
+  hostPath:
+    path: /mnt/data/keycloak-postgresql  # Asegúrate de que este path exista en el nodo
+  volumeMode: Filesystem  # Debe coincidir con lo que solicita la PVC
