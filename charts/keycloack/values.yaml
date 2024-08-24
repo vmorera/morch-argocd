@@ -10,8 +10,13 @@ service:
   port: 8080
 
 postgresql:
-  volumePermissions:
-    enabled: true  # Habilita la gestión automática de permisos
+  initContainers:
+    - name: fix-permissions
+      image: busybox
+      command: ["sh", "-c", "chown -R 1001:1001 /bitnami/postgresql"]
+      volumeMounts:
+        - name: data
+          mountPath: /bitnami/postgresql
   enabled: true
   persistence:
     enabled: true
