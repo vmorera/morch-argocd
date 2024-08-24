@@ -16,6 +16,7 @@ postgresql:
     size: 8Gi
     accessModes:
       - ReadWriteOnce
+    mountPath: /bitnami/postgresql
   securityContext:
     enabled: true
     runAsUser: 1001
