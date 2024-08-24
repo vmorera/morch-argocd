@@ -1,4 +1,4 @@
-replicaCount: 1
+replicaCount: 2
 
 image:
   repository: bitnami/keycloak
@@ -33,7 +33,3 @@ postgresql:
     database: keycloak_db
     username: keycloak_user
     password: keycloak_password
-
-
-
-# Aquí puedes añadir más configuraciones específicas para Keycloak
