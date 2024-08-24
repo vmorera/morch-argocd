@@ -16,6 +16,10 @@ postgresql:
     size: 8Gi
     accessModes:
       - ReadWriteOnce
+  securityContext:
+    enabled: true
+    runAsUser: 1001
+    fsGroup: 1001
   enabled: true
   auth:
     database: keycloak_db
